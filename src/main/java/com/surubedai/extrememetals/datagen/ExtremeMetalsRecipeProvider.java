@@ -33,6 +33,8 @@ public class ExtremeMetalsRecipeProvider extends RecipeProvider {
     TagKey<Item> silverIngotTag = ItemTags.create(new ResourceLocation("forge", "ingots/silver"));
     TagKey<Item> brassIngotTag = ItemTags.create(new ResourceLocation("forge", "ingots/brass"));
     TagKey<Item> bronzeIngotTag = ItemTags.create(new ResourceLocation("forge", "ingots/bronze"));
+    TagKey<Item> pig_ironIngotTag = ItemTags.create(new ResourceLocation("forge", "ingots/pig_iron"));
+    TagKey<Item> steelIngotTag = ItemTags.create(new ResourceLocation("forge", "ingots/steel"));
 
     //plates
     TagKey<Item> ironPlateTag = ItemTags.create(new ResourceLocation("forge", "plates/iron"));
@@ -76,6 +78,17 @@ public class ExtremeMetalsRecipeProvider extends RecipeProvider {
             )
             .unlockedBy("has_raw_sphalerite", has(ExtremeMetalsAddItems.RAW_SPHALERITE.get()))
             .save(consumer, new ResourceLocation(ExtremeMetalsMain.MODID, "smelting/raw_sphalerite")
+        );
+
+        SimpleCookingRecipeBuilder.smelting(
+                Ingredient.of(pig_ironIngotTag),
+                RecipeCategory.MISC,
+                ExtremeMetalsAddItems.STEEL_INGOT.get(),
+                0.1F,
+                200
+            )
+            .unlockedBy("has_pig_iron", has(ExtremeMetalsAddItems.PIG_IRON_INGOT.get()))
+            .save(consumer, new ResourceLocation(ExtremeMetalsMain.MODID, "smelting/pig_iron_ingot")
         );
 
         // primitive reduction furnace
@@ -237,6 +250,18 @@ public class ExtremeMetalsRecipeProvider extends RecipeProvider {
             .unlockedBy("has_steam_power_unit", has(ExtremeMetalsAddItems.STEAM_POWER_UNIT.get()))
             .save(consumer, new ResourceLocation(ExtremeMetalsMain.MODID, "shaped/steam/lathe")
         );
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtremeMetalsAddBlocks.BlockItems.STEAM_AUTOMATIC_LOOM.get(),1) // 完成品
+                .pattern("PGB")
+                .pattern("GSS")
+                .pattern("BSS")
+                .define('P', ExtremeMetalsAddItems.STEAM_POWER_UNIT.get())
+                .define('B', Ingredient.of(bronzePlateTag))
+                .define('G', Ingredient.of(brassGearTag))
+                .define('S', Items.STICK)
+                .unlockedBy("has_steam_power_unit", has(ExtremeMetalsAddItems.STEAM_POWER_UNIT.get()))
+                .save(consumer, new ResourceLocation(ExtremeMetalsMain.MODID, "shaped/steam/automatic_loom")
+                );
 
         // shaped crafting (weight and mold)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtremeMetalsAddItems.WEIGHT.get(),4) // 完成品

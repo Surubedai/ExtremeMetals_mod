@@ -85,6 +85,10 @@ public class ExtremeMetalsAddItems {
             "pig_iron_ingot",
             () -> new ItemCommonNormal(new Item.Properties()));
 
+    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register(
+            "steel_ingot",
+            () -> new ItemCommonNormal(new Item.Properties()));
+
 
     public static final RegistryObject<Item> IRON_PLATE = ITEMS.register(
             "iron_plate",

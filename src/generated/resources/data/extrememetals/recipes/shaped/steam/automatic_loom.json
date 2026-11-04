@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "forge:plates/bronze"
+    },
+    "G": {
+      "tag": "forge:gears/brass"
+    },
+    "P": {
+      "item": "extrememetals:steam_power_unit"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "PGB",
+    "GSS",
+    "BSS"
+  ],
+  "result": {
+    "item": "extrememetals:steam_automatic_loom"
+  },
+  "show_notification": true
+}
