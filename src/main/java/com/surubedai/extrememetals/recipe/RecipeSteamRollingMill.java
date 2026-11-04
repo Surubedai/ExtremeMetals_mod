@@ -68,7 +68,7 @@ public class RecipeSteamRollingMill implements Recipe<SimpleContainer> {
     // JSONとJavaコードを相互変換する内部クラス
     public static class Serializer implements RecipeSerializer<RecipeSteamRollingMill> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(ExtremeMetalsMain.MODID, "steam_rolling");
+        public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(ExtremeMetalsMain.MODID, "steam_rolling");
 
         @Override
         public RecipeSteamRollingMill fromJson(ResourceLocation recipeId, JsonObject json) {

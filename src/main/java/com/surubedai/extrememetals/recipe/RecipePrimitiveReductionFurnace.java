@@ -69,7 +69,7 @@ public class RecipePrimitiveReductionFurnace implements Recipe<SimpleContainer> 
     // JSONとJavaコードを相互変換する内部クラス
     public static class Serializer implements RecipeSerializer<RecipePrimitiveReductionFurnace> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(ExtremeMetalsMain.MODID, "primitive_reduction");
+        public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(ExtremeMetalsMain.MODID, "primitive_reduction");
 
         @Override
         public RecipePrimitiveReductionFurnace fromJson(ResourceLocation recipeId, JsonObject json) {

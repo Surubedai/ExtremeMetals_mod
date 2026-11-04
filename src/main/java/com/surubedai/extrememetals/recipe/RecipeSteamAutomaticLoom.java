@@ -68,7 +68,7 @@ public class RecipeSteamAutomaticLoom implements Recipe<SimpleContainer> {
     // JSONとJavaコードを相互変換する内部クラス
     public static class Serializer implements RecipeSerializer<RecipeSteamAutomaticLoom> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(ExtremeMetalsMain.MODID, "steam_loom");
+        public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(ExtremeMetalsMain.MODID, "steam_loom");
 
         @Override
         public RecipeSteamAutomaticLoom fromJson(ResourceLocation recipeId, JsonObject json) {

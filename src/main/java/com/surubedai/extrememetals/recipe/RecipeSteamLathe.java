@@ -68,7 +68,7 @@ public class RecipeSteamLathe implements Recipe<SimpleContainer> {
     // JSONとJavaコードを相互変換する内部クラス
     public static class Serializer implements RecipeSerializer<RecipeSteamLathe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(ExtremeMetalsMain.MODID, "steam_lathe");
+        public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(ExtremeMetalsMain.MODID, "steam_lathe");
 
         @Override
         public RecipeSteamLathe fromJson(ResourceLocation recipeId, JsonObject json) {

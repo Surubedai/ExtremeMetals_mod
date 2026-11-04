@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class ScreenPrimitiveSteamBoilerDrawing extends AbstractContainerScreen<ScreenPrimitiveSteamBoiler> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(ExtremeMetalsMain.MODID, "textures/gui/primitive_steam_boiler.png");
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(ExtremeMetalsMain.MODID, "textures/gui/primitive_steam_boiler.png");
 
     public ScreenPrimitiveSteamBoilerDrawing(ScreenPrimitiveSteamBoiler pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);

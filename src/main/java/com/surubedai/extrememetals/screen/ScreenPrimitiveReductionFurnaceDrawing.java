@@ -12,7 +12,7 @@ import net.minecraft.world.entity.player.Inventory;
 public class ScreenPrimitiveReductionFurnaceDrawing extends AbstractContainerScreen<ScreenPrimitiveReductionFurnace> {
     // 💡 画面の背景に使用するテクスチャ画像のパス（後ほどバニラのかまどの画像を流用するか、自作画像を置きます）
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(ExtremeMetalsMain.MODID, "textures/gui/primitive_reduction_furnace.png");
+        ResourceLocation.fromNamespaceAndPath(ExtremeMetalsMain.MODID, "textures/gui/primitive_reduction_furnace.png");
 
     public ScreenPrimitiveReductionFurnaceDrawing(ScreenPrimitiveReductionFurnace menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);

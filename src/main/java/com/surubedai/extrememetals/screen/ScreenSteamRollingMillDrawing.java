@@ -12,7 +12,7 @@ import net.minecraft.world.entity.player.Inventory;
 public class ScreenSteamRollingMillDrawing extends AbstractContainerScreen<ScreenSteamRollingMill> {
     // 💡 画面の背景に使用するテクスチャ画像のパス（後ほどバニラのかまどの画像を流用するか、自作画像を置きます）
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(ExtremeMetalsMain.MODID, "textures/gui/steam_rolling_mill.png");
+        ResourceLocation.fromNamespaceAndPath(ExtremeMetalsMain.MODID, "textures/gui/steam_rolling_mill.png");
 
     public ScreenSteamRollingMillDrawing(ScreenSteamRollingMill menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
