@@ -11,6 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import net.minecraft.core.NonNullList;
+
 
 public class RecipePrimitiveReductionFurnace implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
@@ -92,4 +94,12 @@ public class RecipePrimitiveReductionFurnace implements Recipe<SimpleContainer> 
         }
 
     }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        NonNullList<Ingredient> ingredients = NonNullList.create();
+        ingredients.add(input);
+        return ingredients;
+    }
+
 }

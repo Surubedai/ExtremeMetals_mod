@@ -2,6 +2,7 @@ package com.surubedai.extrememetals.recipe;
 
 import com.google.gson.JsonObject;
 import com.surubedai.extrememetals.ExtremeMetalsMain; // あなたのメインクラス
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -63,6 +64,13 @@ public class RecipeSteamRollingMill implements Recipe<SimpleContainer> {
     public static class Type implements RecipeType<RecipeSteamRollingMill> {
         public static final Type INSTANCE = new Type();
         public static final String ID = "steam_rolling"; // レシピの種類名
+    }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        NonNullList<Ingredient> ingredients = NonNullList.create();
+        ingredients.add(input);
+        return ingredients;
     }
 
     // JSONとJavaコードを相互変換する内部クラス
