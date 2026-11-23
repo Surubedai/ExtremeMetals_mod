@@ -1,10 +1,11 @@
-package com.surubedai.extrememetals;// メインクラス（YourModMain.java など）の内部に追記、または既存の @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD) があればそこに追記します
-
+package com.surubedai.extrememetals;
+import com.surubedai.extrememetals.regi.ExtremeMetalsAddItems;
 import com.surubedai.extrememetals.regi.ExtremeMetalsAddScreens;
 
 import com.surubedai.extrememetals.screen.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -22,6 +23,17 @@ public class ExtremeMetalsClientEvents {
             MenuScreens.register(ExtremeMetalsAddScreens.STEAM_LATHE_MENU.get(), ScreenSteamLatheDrawing::new);
             MenuScreens.register(ExtremeMetalsAddScreens.STEAM_LOOM_MENU.get(), ScreenSteamAutomaticLoomDrawing::new);
         });
+    }
+
+    @SubscribeEvent
+    public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+        for (MaterialColors mat : MaterialColors.values()) {
+            event.register(
+                    (stack, tintIndex) -> tintIndex == 0 ? mat.color : -1,
+                    mat.ingot.get(),
+                    mat.plate.get()
+            );
+        }
     }
 
 }

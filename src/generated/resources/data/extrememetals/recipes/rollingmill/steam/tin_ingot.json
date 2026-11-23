@@ -1,0 +1,9 @@
+{
+  "type": "extrememetals:steam_rolling",
+  "ingredient": {
+    "tag": "forge:ingots/tin"
+  },
+  "output": {
+    "item": "extrememetals:tin_plate"
+  }
+}

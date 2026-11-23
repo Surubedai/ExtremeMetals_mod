@@ -1,5 +1,6 @@
 package com.surubedai.extrememetals.regi.tab;
 
+import com.surubedai.extrememetals.MaterialColors;
 import com.surubedai.extrememetals.regi.ExtremeMetalsAddBlocks;
 import com.surubedai.extrememetals.regi.ExtremeMetalsAddFluids;
 import com.surubedai.extrememetals.regi.ExtremeMetalsAddItems;
@@ -14,18 +15,18 @@ public class ExtremeMetalsItems {
             ExtremeMetalsAddItems.CASSITERITE_COAL_MIXTURE.get(),
             ExtremeMetalsAddItems.ZINC_OXIDE_COAL_MIXTURE.get(),
 
-            ExtremeMetalsAddItems.SILVER_INGOT.get(),
-            ExtremeMetalsAddItems.TIN_INGOT.get(),
-            ExtremeMetalsAddItems.ZINC_INGOT.get(),
+            MaterialColors.SILVER.ingot.get(),
+            MaterialColors.TIN.ingot.get(),
+            MaterialColors.ZINC.ingot.get(),
+            MaterialColors.BRONZE.ingot.get(),
+            MaterialColors.BRASS.ingot.get(),
+            MaterialColors.PIG_IRON.ingot.get(),
+            MaterialColors.STEEL.ingot.get(),
 
-            ExtremeMetalsAddItems.BRONZE_INGOT.get(),
-            ExtremeMetalsAddItems.BRASS_INGOT.get(),
-            ExtremeMetalsAddItems.PIG_IRON_INGOT.get(),
-            ExtremeMetalsAddItems.STEEL_INGOT.get(),
-
-            ExtremeMetalsAddItems.IRON_PLATE.get(),
-            ExtremeMetalsAddItems.BRONZE_PLATE.get(),
-            ExtremeMetalsAddItems.BRASS_PLATE.get(),
+            MaterialColors.IRON.plate.get(),
+            MaterialColors.TIN.plate.get(),
+            MaterialColors.BRONZE.plate.get(),
+            MaterialColors.BRASS.plate.get(),
 
             ExtremeMetalsAddItems.IRON_ROD.get(),
 

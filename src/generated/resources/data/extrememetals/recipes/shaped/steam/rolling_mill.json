@@ -13,12 +13,15 @@
     },
     "P": {
       "item": "extrememetals:steam_power_unit"
+    },
+    "T": {
+      "tag": "forge:plates/tin"
     }
   },
   "pattern": [
     "PGI",
     "PGB",
-    "BBB"
+    "TTT"
   ],
   "result": {
     "item": "extrememetals:steam_rolling_mill"

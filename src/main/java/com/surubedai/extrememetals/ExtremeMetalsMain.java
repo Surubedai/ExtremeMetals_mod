@@ -15,6 +15,7 @@ public class ExtremeMetalsMain
 
     public ExtremeMetalsMain()
     {
+        ExtremeMetalsAddItems.init();
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ExtremeMetalsAddItems.ITEMS.register(bus);
         ExtremeMetalsAddBlocks.Blocks.BLOCKS.register(bus);

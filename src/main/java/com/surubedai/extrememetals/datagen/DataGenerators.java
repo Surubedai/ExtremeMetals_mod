@@ -3,6 +3,7 @@ package com.surubedai.extrememetals.datagen;
 import com.surubedai.extrememetals.ExtremeMetalsMain;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -13,9 +14,12 @@ public class DataGenerators {
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
+        ExistingFileHelper helper = event.getExistingFileHelper();
 
-        generator.addProvider(true, new ExtremeMetalsRecipeProvider(packOutput));
+        // クライアント側データ（モデルJSONなど）の生成
+        generator.addProvider(event.includeClient(), new ExtremeMetalsItemModelProvider(packOutput, helper));
+
+        // サーバー側データ（レシピなど）の生成
+        generator.addProvider(event.includeServer(), new ExtremeMetalsRecipeProvider(packOutput));
     }
-
-
 }

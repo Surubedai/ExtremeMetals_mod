@@ -1,17 +1,30 @@
 package com.surubedai.extrememetals.regi;
 
 import com.surubedai.extrememetals.ExtremeMetalsMain;
+import com.surubedai.extrememetals.MaterialColors;
 import com.surubedai.extrememetals.item.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.Map;
+
 public class ExtremeMetalsAddItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(
             ForgeRegistries.ITEMS,
             ExtremeMetalsMain.MODID
     );
+
+    public static RegistryObject<Item> registerSimple(String name) {
+        return ITEMS.register(name, () -> new Item(new Item.Properties()));
+    }
+
+    public static void init() {
+        MaterialColors.values();
+    }
 
     public static final RegistryObject<Item> IRON_COAL_MIXTURE = ITEMS.register(
             "iron_coal_mixture",
@@ -60,7 +73,7 @@ public class ExtremeMetalsAddItems {
             () -> new ItemCommonNormal(new Item.Properties()));
 
 
-    public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register(
+    /*public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register(
             "silver_ingot",
             () -> new ItemCommonNormal(new Item.Properties()));
 
@@ -100,7 +113,7 @@ public class ExtremeMetalsAddItems {
 
     public static final RegistryObject<Item> BRASS_PLATE = ITEMS.register(
             "brass_plate",
-            () -> new ItemCommonNormal(new Item.Properties()));
+            () -> new ItemCommonNormal(new Item.Properties()));*/
 
 
     public static final RegistryObject<Item> IRON_ROD = ITEMS.register(

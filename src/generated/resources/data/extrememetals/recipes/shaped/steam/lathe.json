@@ -2,9 +2,6 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "tag": "forge:plates/bronze"
-    },
     "G": {
       "tag": "forge:gears/brass"
     },
@@ -16,10 +13,13 @@
     },
     "S": {
       "item": "minecraft:grindstone"
+    },
+    "T": {
+      "tag": "forge:plates/tin"
     }
   },
   "pattern": [
-    "BBB",
+    "TTT",
     "PGI",
     "PGS"
   ],
